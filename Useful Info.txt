@@ -1,0 +1,6 @@
+REVIT API Notes & Links
+
+https://www.revitapidocs.com/code/
+
+https://jeremytammik.github.io/tbc/a/1057_db_explor_python_sh.htm
+

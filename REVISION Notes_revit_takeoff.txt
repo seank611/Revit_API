@@ -1,0 +1,62 @@
+revit_takeoff_v1.py
+V1.2 - Info & Revisions
+
+General: Pull element information out of revit, clean up data, organize into spreadsheet and provide basic info
+
+Scripts:
+revit_data.py
+- Scrapes element information from revit, must be used in RevitPythonShell
+
+revit_takeoff_v1.py
+- Main GUI for application, takes revit generated CSV and cleans up into revit file
+
+material_takeoff.py
+- Includes takeoff()
+- priceupdate(): calculations material quantities for different elements, cleans up data and 
+writes to excel file.  Uses takeofutils.py
+
+takeofutils.py
+- Includes list_check(), mat_assign(), df_toexcel()
+- list_check(): checks list to confirm strings within it contain certain values, returns list with values that match
+- mat_assign(): assigns material type to elements in list that have material undefined
+- df_toexcel(): writes a dataframe table into an excel sheet
+
+Modules:
+tkinter
+openpyxl
+pandas
+
+
+PENDING UPDATES:
+- info on other materials
+- update structural usage
+- better material filtering (other material issue)
+
+REVISION NOTES:
+10/09/2021 - revit_takeoff_v1.py
+- added entry bar to input output file name, removed dialogue box for naming file
+
+10/05/2021 - material_takeoff.py
+- added cfmf function, creates new tab in spreadsheet
+
+9/25/2021 - takeoffutils.py
+- fixed mat_assing function to include checking elements assigned as 'Other'
+
+9/25/2021 - material_takeoff.py
+- added steel function, creates new tab in spreadsheet
+- added concrete function, creates new tab in spreadsheet
+- added masonry function, creates new tab in spreadsheet
+- added wood function, creates new tab in spreadsheet
+
+9/23/2021 - revit_data.py
+- changed except on param_doubles to 0, from 'na' to prevent converting floats to strings
+- added 'length' to values to pull
+
+6/28/2021 - revit_data.py
+- renamed from revit_datapullV1
+- includes level info from model as well
+
+6/13/2021 - revit_takeoff_v1.py V1.1
+- added filename prompt
+
+

@@ -1,0 +1,14 @@
+cl = FilteredElementCollector(doc)
+cl.OfCategory(BuiltInCategory.OST_StructuralColumns)
+cl.WhereElementIsNotElementType()
+
+tot_stl = 0
+for s_column in cl:
+    # Looks up how revit references volume, and then pulls value for current column
+    v = s_column.LookupParameter('Volume')
+    # Some parameters have integers or strings or boolean, need to verify this for each parameter
+    v2 = v.AsDouble()
+    tot_stl += v2
+
+stl_wt = tot_stl * 492
+print(stl_wt)
